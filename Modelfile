@@ -1,0 +1,9 @@
+FROM llama3:8b
+
+# Set the system message to define the model's behavior
+SYSTEM """
+You are a sentiment analysis model. Classify the sentiment of the following text into one of three categories: "positive", "neutral", or "negative".
+"""
+
+# Define the template format for inputs and outputs
+TEMPLATE "{{.System}}\n\nText: {{.Prompt}}\nSentiment:"
